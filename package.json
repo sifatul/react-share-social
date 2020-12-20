@@ -1,0 +1,62 @@
+{
+  "name": "react-share-social", 
+  "version": "0.1.33",
+  "private": false,
+  "dependencies": {
+    "react-share": "^4.3.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "publish:npm": "export NODE_ENV=production && BABEL_ENV=production && rm -rf dist && mkdir dist &&  babel src/components -d dist --copy-files",
+    "publish:window": "cross-env NODE_ENV=production && rm -rf dist && mkdir dist &&  babel src/components -d dist --copy-files"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "main": "./dist/index.js",
+  "module": "dist/index.js",
+  "babel": {
+    "presets": [
+      "@babel/react"
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-proposal-class-properties",
+        {
+          "loose": true
+        }
+      ]
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "babel-core": "^7.0.0-bridge.0",
+    "css-loader": "^5.0.1",
+    "react": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "react-dom": "^17.0.1",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.6.0",
+    "web-vitals": "^0.2.4"
+  }
+}

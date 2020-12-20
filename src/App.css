@@ -1,0 +1,141 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.container {
+  position: relative;
+  background: white;
+  width: 100%;
+  max-width: 568px;
+  height: auto;
+  padding: 30px;
+  outline: none;
+}
+.title{
+  text-align: left;
+  font-family: Apple SD Gothic Neo;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000;
+}
+.iconContainer{
+  width: 50%;
+  /* margin: auto; */
+  display: flex;
+  /* margin-bottom: 1.5rem; */
+  justify-content: flex-start;
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+.iconContainer  button{
+  flex:1 1 auto;
+  /*border:1px red solid;*/
+  border: none;
+  text-align:center;
+  margin:5px;
+}
+.closeImg {
+  position: absolute;
+  display: flex;
+  top: 20px;
+  right: 20px;
+  height:50px;
+  width:50px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  z-index: 9;
+}
+.closeImg:hover{
+  cursor: pointer;
+}
+.copyContainer{
+  position: relative;
+  padding: 14px;
+  border: 1px solid grey;
+  color: #263238;
+  cursor: text;
+  display: inline-flex;
+  font-size: 14px;
+  box-sizing: border-box;
+  align-items: center;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  letter-spacing: -0.05px;
+  width: 100%;
+  font-style: normal;
+  font-weight: normal;
+  background: black;
+  border-radius: 4px;
+  border: none;
+  /* identical to box height, or 143% */
+}
+.copyUrl{
+  color: white;
+  max-width: calc(100% - 55px);
+  overflow-x: auto;
+  font-size: 16px;
+  line-height: 24px;
+  white-space: nowrap
+}
+.copyIcon{
+  width: auto;
+  position: absolute;
+  right: 0px;
+  color: #0C66FF;
+  font-weight: bold;
+}
+.copyIcon p{
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.copyIcon:hover{
+  cursor: pointer;
+}
+.modalStyle, .modalStyle:focus{
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: 0;
+}
+.modalStyle:hover,.modalStyle:focus{
+  border: none;
+  outline: none;
+}
