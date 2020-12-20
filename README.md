@@ -17,7 +17,10 @@ React-share-social component don't pollute the global scope.
 import ReactShareSocial from 'react-share-social' 
 
 export default function RSSUsage() {
-  return <ReactShareSocial  url ="url_to_share.com"/>
+  return <ReactShareSocial 
+     url ="url_to_share.com"
+     socialTypes={['facebook','twitter','reddit']}
+   />
 }
 
 
@@ -39,7 +42,9 @@ export default function RSSCallback() {
 ```
 ## Props
 
-- `url`: content to be shared
+- `url`: content to be shared 
+
+- `socialTypes`: array of button names
 
 - `onSocialButtonClicked`: Callback function to receive a data everytime any social button is clicked
 
