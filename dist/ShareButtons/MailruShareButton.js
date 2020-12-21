@@ -1,20 +1,20 @@
-import { FacebookShareButton, FacebookIcon } from "react-share";
+import { MailruShareButton, MailruIcon } from "react-share";
 import React from "react";
 
-const FacebookShare = ({
+const MailruShare = ({
   url,
   title,
   onSocialButtonClicked,
   socialType
 }) => {
-  return /*#__PURE__*/React.createElement(FacebookShareButton, {
+  return /*#__PURE__*/React.createElement(MailruShareButton, {
     url: url,
     quote: title,
     onClick: () => onSocialButtonClicked(`${socialType || 'button'} clicked.`)
-  }, /*#__PURE__*/React.createElement(FacebookIcon, {
+  }, /*#__PURE__*/React.createElement(MailruIcon, {
     size: 40,
     round: true
   }));
 };
 
-export default FacebookShare;
+export default MailruShare;

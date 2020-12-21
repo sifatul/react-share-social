@@ -2,7 +2,7 @@
 
 UI component to share contents in Social media.
 
-### Features
+## Features
 
 share UI support for:
   - Facebook

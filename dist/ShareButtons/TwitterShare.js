@@ -1,21 +1,36 @@
-import { TwitterShareButton, TwitterIcon, RedditShareButton } from "react-share";
+import { TwitterShareButton, TwitterIcon } from "react-share";
 import React from "react";
-import ShareCtx from './contexts/share_ctx';
 
-const TwitterShare = props => {
-  const {
-    getData
-  } = ShareCtx;
+const TwitterShare = ({
+  url,
+  title,
+  onSocialButtonClicked,
+  socialType
+}) => {
   return /*#__PURE__*/React.createElement(TwitterShareButton, {
-    url: getData().url,
-    title: getData().title,
-    onClick: () => getData().onSocialButtonClicked({
-      socialType: "twitter"
-    })
+    url: url,
+    title: title,
+    onClick: () => onSocialButtonClicked(`${socialType} clicked.`)
   }, /*#__PURE__*/React.createElement(TwitterIcon, {
     size: 40,
     round: true
   }));
 };
 
-export default TwitterShare;
+export default TwitterShare; // EmailShareButton,
+//   InstapaperShareButton,
+//   LineShareButton,
+//   LinkedinShareButton,
+//   LivejournalShareButton,
+//   MailruShareButton,
+//   OKShareButton,
+//   PinterestShareButton,
+//   PocketShareButton,
+//   RedditShareButton,
+//   TelegramShareButton,
+//   TumblrShareButton,
+//   TwitterShareButton,
+//   ViberShareButton,
+//   VKShareButton,
+//   WhatsappShareButton,
+//   WorkplaceShareButton

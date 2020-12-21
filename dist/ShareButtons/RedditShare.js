@@ -1,17 +1,16 @@
-import { RedditShareButton, RedditIcon, FacebookShareButton } from "react-share";
+import { RedditShareButton, RedditIcon } from "react-share";
 import React from "react";
-import ShareCtx from './contexts/share_ctx';
 
-const RedditShare = () => {
-  const {
-    getData
-  } = ShareCtx;
+const RedditShare = ({
+  url,
+  title,
+  onSocialButtonClicked,
+  socialType
+}) => {
   return /*#__PURE__*/React.createElement(RedditShareButton, {
-    url: getData().url,
-    title: getData().title,
-    onClick: () => getData().onSocialButtonClicked({
-      socialType: "reddit"
-    })
+    url: url,
+    title: title,
+    onClick: () => onSocialButtonClicked(`${socialType} clicked.`)
   }, /*#__PURE__*/React.createElement(RedditIcon, {
     size: 40,
     round: true

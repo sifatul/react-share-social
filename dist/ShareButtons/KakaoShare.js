@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
-import ShareCtx from './contexts/share_ctx';
 
-const KakaoShare = props => {
-  const {
-    getData
-  } = ShareCtx;
+const KakaoShare = ({
+  onSocialButtonClicked,
+  url,
+  title,
+  kakaoAPIKey,
+  socialType,
+  thumbnail = ''
+}) => {
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://developers.kakao.com/sdk/js/kakao.js';
@@ -16,32 +19,26 @@ const KakaoShare = props => {
   }, []);
 
   const sendKakaoMessage = () => {
-    getData().onSocialButtonClicked({
-      socialType: "kakao"
-    });
-
-    if (window.Kakao) {
-      const kakao = window.Kakao;
-
-      if (!kakao.isInitialized()) {
-        kakao.init(getData().kakaoAPIKey);
-      }
-
-      kakao.Link.sendDefault({
-        // container: '#kakao-link-btn',
-        objectType: 'feed',
-        content: {
-          title: getData().title,
-          description: "",
-          imageUrl: getData().thumbnail,
-          link: {
-            mobileWebUrl: "",
-            webUrl: getData().url
-          }
-        }
-      });
-    }
+    onSocialButtonClicked(`${socialType || 'button'} clicked.`);
   };
+
+  if (window.Kakao) {
+    const kakao = window.Kakao;
+    if (!kakao.isInitialized()) kakao.init(kakaoAPIKey);
+    kakao.Link.sendDefault({
+      // container: '#kakao-link-btn',
+      objectType: 'feed',
+      content: {
+        title: title,
+        description: "",
+        imageUrl: thumbnail,
+        link: {
+          mobileWebUrl: "",
+          webUrl: url
+        }
+      }
+    });
+  }
 
   return /*#__PURE__*/React.createElement("div", {
     className: "kakao-share-button"
