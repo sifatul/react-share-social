@@ -1,18 +1,12 @@
-import {FacebookShareButton, FacebookIcon} from "react-share";
+import { FacebookShareButton, FacebookIcon } from "react-share";
 import React from "react";
 
-import ShareCtx from './contexts/share_ctx'
-
-
-const FacebookShare = () => {
-
-    const {getData} = ShareCtx
-
+const FacebookShare = ({ url, title, onSocialButtonClicked, socialType }) => {
     return (
         <FacebookShareButton
-            url={getData().url}
-            quote={getData().title}
-            onClick={() => getData().onSocialButtonClicked({socialType: "facebook"})}
+            url={url}
+            quote={title}
+            onClick={() => onSocialButtonClicked(`${socialType||'button'} clicked.`)}
         >
             <FacebookIcon
                 size={40}

@@ -23,7 +23,7 @@ function App() {
         </a>
 
         <SocialShare
-            socialTypes={['facebook','twitter','reddit']}
+            socialTypes={['facebook','twitter','reddit','hatena','instapaper','line','linkedin','livejournal','mailru','ok','pinterest']}
             url ="aistudios.com"
             title = "best product ever"
             onSocialButtonClicked={ function (data) {

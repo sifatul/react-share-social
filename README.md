@@ -1,6 +1,22 @@
 # react-share-social
 
-> UI component to share contents in Social media.
+UI component to share contents in Social media.
+
+### Features
+
+share UI support for:
+  - Facebook
+  - Hatena
+  - Twitter 
+  - LinkedIn 
+  - Reddit 
+  - Line 
+  - Instapaper
+  - Hatena
+  - email  
+  - Live Journal
+  - Ok
+  - Mailru
 
   
 ## Install
@@ -8,7 +24,6 @@
 ```js
 npm install react-share-social --save
 ``` 
-
 ## Usage
 
 React-share-social component don't pollute the global scope.
@@ -19,7 +34,7 @@ import ReactShareSocial from 'react-share-social'
 export default function RSSUsage() {
   return <ReactShareSocial 
      url ="url_to_share.com"
-     socialTypes={['facebook','twitter','reddit']}
+     socialTypes={['facebook','twitter','reddit','linkedin]}
    />
 }
 

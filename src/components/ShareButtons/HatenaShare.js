@@ -1,20 +1,20 @@
-import { RedditShareButton, RedditIcon } from "react-share";
+import { HatenaShareButton, HatenaIcon } from "react-share";
 import React from "react";
 
 
-const RedditShare = ({ url, title, onSocialButtonClicked, socialType }) => {
+const HatenaShare = ({ url, title, onSocialButtonClicked,socialType='' }) => {
     return (
-        <RedditShareButton
+        <HatenaShareButton
             url={url}
             title={title}
             onClick={() => onSocialButtonClicked(`${socialType} clicked.`)}
         >
-            <RedditIcon
+            <HatenaIcon
                 size={40}
                 round
             />
-        </RedditShareButton>
+        </HatenaShareButton>
     )
 }
 
-export default RedditShare;
+export default HatenaShare;
