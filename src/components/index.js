@@ -50,7 +50,7 @@ function ShareSocial(props) {
             </div>
 
             {<div className={Styles.copyContainer}>
-                <div className='copyUrl'>
+                <div className={Styles.copyUrl}>
                     {props.url}
                 </div>
                 <div className={Styles.copyIcon}
