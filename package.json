@@ -1,24 +1,29 @@
 {
-  "name": "react-share-social", 
+  "name": "react-share-social",
+  "homepage": "http://sifatul.github.io/react-share-social",
   "description": "UI component to share contents in Social media. Share contents in facebook, twitter, pinterest, whatsapp etc.",
   "version": "0.1.38",
   "keywords": [
-    "react", "component",
-   " react-component",
+    "react",
+    "component",
+    " react-component",
     "social",
     "media",
     "social-media",
-    "share"
-    "button" ,
+    "share",
+    "button",
     "material design",
     "material-ui"
   ],
   "author": "Md Sifatul Islam <devsifat@gmail.com> (http://sifatul.github.io/)",
   "private": false,
   "dependencies": {
+    "gh-pages": "^3.1.0",
     "react-share": "^4.3.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
