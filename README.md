@@ -40,7 +40,7 @@ import ReactShareSocial from 'react-share-social'
 export default function RSSUsage() {
   return <ReactShareSocial 
      url ="url_to_share.com"
-     socialTypes={['facebook','twitter','reddit','linkedin]}
+     socialTypes={['facebook','twitter','reddit','linkedin']}
    />
 }
 
