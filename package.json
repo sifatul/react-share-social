@@ -2,7 +2,7 @@
   "name": "react-share-social",
   "homepage": "http://react-share-social.github.io/react-share-social",
   "description": "UI component to share contents in Social media. Share contents in facebook, twitter, pinterest, whatsapp etc.",
-  "version": "0.1.40",
+  "version": "0.1.41",
   "keywords": [
     "react",
     "component",
@@ -18,6 +18,7 @@
   "author": "Md Sifatul Islam <devsifat@gmail.com> (http://sifatul.github.io/)",
   "private": false,
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
     "gh-pages": "^3.1.0",
     "react-share": "^4.3.1"
   },

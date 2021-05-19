@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import FacebookShare from "./ShareButtons/FacebookShare";
 import TwitterShare from "./ShareButtons/TwitterShare";
 import RedditShare from "./ShareButtons/RedditShare";
@@ -19,10 +19,11 @@ import Styles from './Styles/main.module.css';
 
 function ShareSocial(props) {
 
+    const [isCopied, setIsCopied] = useState(false);
     const { title, socialTypes = ['facebook', 'twitter'], style} = props;
     const copyToClipboard = (text) => {
         if (navigator && navigator.clipboard) navigator.clipboard.writeText(text)
-            .then(() => { alert(`Copied!`) })
+            .then(() => { setIsCopied(true) })
             .catch((error) => { alert(`Copy failed! ${error}`) });
     }
 
@@ -55,7 +56,7 @@ function ShareSocial(props) {
                 </div>
                 <div className={Styles.copyIcon}
                     onClick={() => copyToClipboard(props.url)}
-                ><p> Copy </p></div>
+                ><p> {isCopied? 'Copied':'Copy'} </p></div>
             </div>}
         </div>
 
