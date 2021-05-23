@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import FacebookShare from "./ShareButtons/FacebookShare";
 import TwitterShare from "./ShareButtons/TwitterShare";
 import RedditShare from "./ShareButtons/RedditShare";
-import KakaoShare from "./ShareButtons/KakaoShare";
+// import KakaoShare from "./ShareButtons/KakaoShare";
 import HatenaShare from "./ShareButtons/HatenaShare";
 import InstapaperShare from "./ShareButtons/InstapaperShare";
 import LineShare from "./ShareButtons/LineShareButton";
@@ -140,18 +140,18 @@ function ShareSocial(props) {
             <div className={classes.iconContainer}>
                 {Array.isArray(socialTypes) && socialTypes.map((type, idx) => (
                     <React.Fragment key={"social_item_" + idx}>
-                        {type === 'facebook' && <FacebookShare {...props} />}
-                        {type === 'twitter' && <TwitterShare {...props} />}
-                        {type === 'reddit' && <RedditShare {...props} />}
-                        {/* {type === 'kakao' && <KakaoShare  {...props} />} */}
-                        {type === 'hatena' && <HatenaShare  {...props} />}
-                        {type === 'instapaper' && <InstapaperShare  {...props} />}
-                        {type === 'line' && <LineShare  {...props} />}
-                        {type === 'linkedin' && <LinkedinShare  {...props} />}
-                        {type === 'livejournal' && <LivejournalShare  {...props} />}
-                        {type === 'mailru' && <MailruShare  {...props} />}
-                        {type === 'ok' && <OKShare  {...props} />}
-                        {/* {type === 'pinterest' && <PinterestShare  {...props} />} */}
+                        {type === 'facebook' && <FacebookShare {...props} socialType={type} />}
+                        {type === 'twitter' && <TwitterShare {...props} socialType={type}/>}
+                        {type === 'reddit' && <RedditShare {...props} socialType={type}/>}
+                        {/* {type === 'kakao' && <KakaoShare  {...props} socialType={type} />} */}
+                        {type === 'hatena' && <HatenaShare  {...props} socialType={type} />}
+                        {type === 'instapaper' && <InstapaperShare  {...props} socialType={type} />}
+                        {type === 'line' && <LineShare  {...props} socialType={type} />}
+                        {type === 'linkedin' && <LinkedinShare  {...props} socialType={type} />}
+                        {type === 'livejournal' && <LivejournalShare  {...props} socialType={type} />}
+                        {type === 'mailru' && <MailruShare  {...props} socialType={type} />}
+                        {type === 'ok' && <OKShare  {...props} socialType={type} />}
+                        {/* {type === 'pinterest' && <PinterestShare  {...props} socialType={type} />} */}
                     </React.Fragment>
                 ))}
 

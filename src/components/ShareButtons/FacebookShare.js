@@ -1,7 +1,7 @@
 import { FacebookShareButton, FacebookIcon } from "react-share";
 import React from "react";
 import Tooltip from '@material-ui/core/Tooltip';
-const FacebookShare = ({ url, title, onSocialButtonClicked, socialType }) => {
+const FacebookShare = ({ url, title, onSocialButtonClicked=()=>{}, socialType }) => {
     return (
         <Tooltip title="Facebook" placement="top">
             <FacebookShareButton

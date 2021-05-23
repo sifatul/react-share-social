@@ -2,7 +2,7 @@ import { MailruShareButton, MailruIcon } from "react-share";
 import React from "react";
 import Tooltip from '@material-ui/core/Tooltip';
 
-const MailruShare = ({ url, title, onSocialButtonClicked, socialType }) => {
+const MailruShare = ({ url, title, onSocialButtonClicked=()=>{}, socialType }) => {
     return (
         <Tooltip title="Mailru" placement="top">
 

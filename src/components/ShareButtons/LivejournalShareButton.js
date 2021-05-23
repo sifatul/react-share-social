@@ -3,7 +3,7 @@ import React from "react";
 import Tooltip from '@material-ui/core/Tooltip';
 
 
-const LivejournalShare = ({ url, title, onSocialButtonClicked, socialType }) => {
+const LivejournalShare = ({ url, title, onSocialButtonClicked=()=>{}, socialType }) => {
     return (
         <Tooltip title="Livejournal" placement="top">
             <LivejournalShareButton

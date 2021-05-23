@@ -3,7 +3,7 @@ import React from "react";
 import Tooltip from '@material-ui/core/Tooltip';
 
 
-const TwitterShare = ({ url, title, onSocialButtonClicked, socialType }) => {
+const TwitterShare = ({ url, title, onSocialButtonClicked=()=>{}, socialType }) => {
     return (
         <Tooltip title="Twitter" placement="top">
             <TwitterShareButton

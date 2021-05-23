@@ -2,7 +2,7 @@ import { LinkedinShareButton, LinkedinIcon } from "react-share";
 import React from "react";
 import Tooltip from '@material-ui/core/Tooltip';
 
-const LinkedinShare = ({ url, title, onSocialButtonClicked, socialType }) => {
+const LinkedinShare = ({ url, title, onSocialButtonClicked=()=>{}, socialType }) => {
     return (
         <Tooltip title="Linkedin" placement="top">
             <LinkedinShareButton

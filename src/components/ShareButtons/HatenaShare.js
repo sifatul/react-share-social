@@ -3,7 +3,7 @@ import React from "react";
 import Tooltip from '@material-ui/core/Tooltip';
 
 
-const HatenaShare = ({ url, title, onSocialButtonClicked, socialType = '' }) => {
+const HatenaShare = ({ url, title, onSocialButtonClicked=()=>{}, socialType = '' }) => {
     return (
         <Tooltip title="Hatena" placement="top">
             <HatenaShareButton

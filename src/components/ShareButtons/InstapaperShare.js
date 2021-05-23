@@ -3,7 +3,7 @@ import React from "react";
 import Tooltip from '@material-ui/core/Tooltip';
 
 
-const InstapaperShare = ({ url, title, onSocialButtonClicked, socialType }) => {
+const InstapaperShare = ({ url, title, onSocialButtonClicked=()=>{}, socialType }) => {
     return (
         <Tooltip title="Instapaper" placement="top">
             <InstapaperShareButton
