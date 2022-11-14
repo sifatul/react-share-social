@@ -10,7 +10,8 @@ import LinkedinShare from "./ShareButtons/LinkedinShareButton";
 import LivejournalShare from "./ShareButtons/LivejournalShareButton";
 import MailruShare from "./ShareButtons/MailruShareButton";
 import OKShare from "./ShareButtons/OKShareButton";
-// import PinterestShare from "./ShareButtons/PinterestShareButton";
+import WhatsApp from "./ShareButtons/WhatsappShare";
+import PinterestShare from "./ShareButtons/PinterestShareButton";
 import { makeStyles } from '@material-ui/core/styles';
 
 
@@ -123,6 +124,22 @@ const useStyles = makeStyles({
     }
 });
 
+const components = {
+    facebook: FacebookShare,
+    twitter: TwitterShare,
+    reddit: RedditShare,
+    hatena: HatenaShare,
+    instapaper: InstapaperShare,
+    line: LineShare,
+    linkedin: LinkedinShare,
+    livejournal: LivejournalShare,
+    mailru: MailruShare,
+    ok: OKShare,
+    whatsapp: WhatsApp,
+    pinterest: PinterestShare,
+
+};
+
 
 function ShareSocial(props) {
     const classes = useStyles();
@@ -133,6 +150,15 @@ function ShareSocial(props) {
             .then(() => { setIsCopied(true) })
             .catch((error) => { alert(`Copy failed! ${error}`) });
     }
+    function getComponent(type) {
+        // Wrong! JSX type can't be an expression.
+        // Correct! JSX type can be a capitalized variable.
+        const SpecificMedia = components[type];
+        return <SpecificMedia {...props} socialType={type} />;
+    }
+
+
+
 
     return (
         <div className={classes.container} style={style}>
@@ -140,18 +166,7 @@ function ShareSocial(props) {
             <div className={classes.iconContainer}>
                 {Array.isArray(socialTypes) && socialTypes.map((type, idx) => (
                     <React.Fragment key={"social_item_" + idx}>
-                        {type === 'facebook' && <FacebookShare {...props} socialType={type} />}
-                        {type === 'twitter' && <TwitterShare {...props} socialType={type}/>}
-                        {type === 'reddit' && <RedditShare {...props} socialType={type}/>}
-                        {/* {type === 'kakao' && <KakaoShare  {...props} socialType={type} />} */}
-                        {type === 'hatena' && <HatenaShare  {...props} socialType={type} />}
-                        {type === 'instapaper' && <InstapaperShare  {...props} socialType={type} />}
-                        {type === 'line' && <LineShare  {...props} socialType={type} />}
-                        {type === 'linkedin' && <LinkedinShare  {...props} socialType={type} />}
-                        {type === 'livejournal' && <LivejournalShare  {...props} socialType={type} />}
-                        {type === 'mailru' && <MailruShare  {...props} socialType={type} />}
-                        {type === 'ok' && <OKShare  {...props} socialType={type} />}
-                        {/* {type === 'pinterest' && <PinterestShare  {...props} socialType={type} />} */}
+                        {getComponent(type)}
                     </React.Fragment>
                 ))}
 

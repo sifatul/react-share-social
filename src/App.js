@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <SocialShare
-          socialTypes={['facebook', 'twitter', 'line', 'linkedin','reddit', 'hatena', 'instapaper',  'livejournal', 'mailru', 'ok', 'pinterest']}
+          socialTypes={['facebook', 'twitter', 'line', 'linkedin', 'reddit', 'whatsapp', 'instapaper', 'livejournal', 'mailru', 'ok', 'pinterest']}
           url="http://sifatul.github.io/"
           quote="Share and get amazing products"
           onSocialButtonClicked={function (data) {

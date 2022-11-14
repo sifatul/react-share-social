@@ -13,6 +13,7 @@ UI component to share contents in Social media.
 share UI support for:
   - Facebook
   - Hatena
+  - WhatsApp
   - Twitter 
   - LinkedIn 
   - Reddit 
@@ -74,7 +75,7 @@ export default function RSSCallback() {
 
 - `url`: content to be shared 
 
-- `socialTypes`: array of button names
+- `socialTypes`: array of button names in lower case
 
 - `onSocialButtonClicked`: Callback function to receive a data everytime any social button is clicked
 
