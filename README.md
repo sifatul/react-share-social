@@ -5,7 +5,7 @@ UI component to share contents in Social media.
 
 ## Demo
 
-[Demo](https://react-share-social.github.io/react-share-social/).
+[Demo](https://sifatul.github.io/react-share-social/).
 
 
 ## Features
