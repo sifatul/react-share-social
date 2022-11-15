@@ -46,7 +46,8 @@ const style = {
   },
   copyContainer: {
     border: '1px solid blue',
-    background: 'rgb(0,0,0,0.7)'
+    background: 'rgb(0,0,0,0.7)',
+    display: 'none'
   },
   title: {
     color: 'aquamarine',
@@ -58,7 +59,7 @@ function App() {
 
   return (
     <div className={classes.App}>
-      <div className={classes.Box}>
+      <div className={classes.Box} data-testid="multiple-icon-box">
 
         <header className={classes.AppHeader}>
           Multiple social icons
@@ -80,7 +81,7 @@ function App() {
       </div>
 
 
-      <div className={classes.Box}>
+      <div className={classes.Box} data-testid="customizable-box">
         <header className={classes.AppHeader}>
 
           Everything is customizable
@@ -92,9 +93,9 @@ function App() {
           socialTypes={['facebook', 'twitter', 'line', 'linkedin', 'whatsapp', 'viber', 'telegram']}
           url="http://sifatul.github.io/"
           title="Share and get amazing products"
-          // onSocialButtonClicked={(buttonName: string) => {
-          //   alert(`${buttonName} clicked`)
-          // }}
+          onSocialButtonClicked={(buttonName: string) => {
+            alert(`${buttonName} clicked`)
+          }}
           style={style}
         />
 

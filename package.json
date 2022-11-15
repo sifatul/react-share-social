@@ -24,8 +24,8 @@
   },
   "scripts": {
     "npm:publish" :"tsc",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build && npm run test",
+    "deploy": "npm run predeploy && gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

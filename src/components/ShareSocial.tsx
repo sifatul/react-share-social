@@ -191,7 +191,7 @@ function ShareSocial(props: IndexPropsType) {
     }
     function getComponent(type: string) {
         const { Button, Icon } = components[type];
-        return <Tooltip title="" placement="top">
+        return <Tooltip title={type || ''} placement="top">
             <Button
                 url={url}
                 quote={title}
@@ -209,8 +209,8 @@ function ShareSocial(props: IndexPropsType) {
 
 
     return (
-        <div className={classes.container} style={style?.root}>
-            {title && <h1 className={classes.title} style={style?.title}> {title} </h1>}
+        <div className={classes.container} style={style?.root} data-testid="root">
+            {title && <h1 className={classes.title} style={style?.title} data-testid="title"> {title} </h1>}
             <div className={classes.iconContainer}>
                 {Array.isArray(socialTypes) && socialTypes.map((type, idx) => (
                     <React.Fragment key={"social_item_" + idx}>
@@ -221,12 +221,15 @@ function ShareSocial(props: IndexPropsType) {
             </div>
 
             <div className={classes.copyContainer} style={style?.copyContainer}>
-                <div className={classes.copyUrl}>
+                <div className={classes.copyUrl} data-testid="url">
                     {url}
                 </div>
                 <div className={classes.copyIcon}
+                    data-testid="copy-btn"
                     onClick={() => copyToClipboard(url)}
-                ><p> {isCopied ? 'Copied' : 'Copy'} </p></div>
+                >
+                    <p> {isCopied ? 'Copied' : 'Copy'} </p>
+                </div>
             </div>
         </div>
 
