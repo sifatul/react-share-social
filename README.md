@@ -43,23 +43,17 @@ export default function RSSUsage() {
      socialTypes={['facebook','twitter','reddit','linkedin']}
    />
 }
-
-
 ```
 ## Callback
 
  react-share-social component provides a a helpful callback everytime a social media icon is clicked
 
 ```js
-import {ShareSocial} from 'react-share-social' 
- 
-
-export default function RSSCallback() { 
-    return  <ShareSocial  
-                 onSocialButtonClicked={ data=> console.log(data)}    
-            />
-}
-//socialType: "twitter"
+<ShareSocial  
+  url ="url_to_share.com"
+  socialTypes= {['facebook','twitter']}
+  onSocialButtonClicked={ data => console.log(data)}    
+/>
 ```
 ## Props
 
@@ -69,36 +63,49 @@ export default function RSSCallback() {
 
 - `onSocialButtonClicked`: Callback function to receive a data everytime any social button is clicked
 
-- `style`: Allow inline custom css of the root
+- `style`: Allow inline custom css of the root, title, and copyContainer
 
 - `title`: title of the component
 
 Example:
 
-```jsx
-<ShareSocial title={'sharing happiness'} />
+```js
+<ShareSocial 
+  title={'sharing happiness'} 
+  url ="url_to_share.com"
+  socialTypes= {['facebook','twitter']}
+/>
 ```
 ## Custom Styles
 
  react-share-social component provides a style property. These properties are always applied to the root element.
 
 ```js
-import {ShareSocial} from 'react-share-social' 
-
 // We can use inline-style
 const style = {
-  root:{
+  root: {
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
     borderRadius: 3,
     border: 0,
-    color: 'white',
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    color: 'white',
+
+  },
+  copyContainer: {
+    border: '1px solid blue',
+    background: 'rgb(0,0,0,0.7)'
+  },
+  title: {
+    color: 'aquamarine',
+    fontStyle: 'italic'
   }
 };
 
-export default function InlineStyle() { 
-    return <ShareSocial style={style} />
-}
+<ShareSocial 
+  url ="url_to_share.com"
+  socialTypes= {['facebook','twitter']}
+  style={style}
+/>
 ```
 
 ## License

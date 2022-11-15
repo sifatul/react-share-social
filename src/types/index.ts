@@ -3,7 +3,7 @@ export interface IndexPropsType {
   socialTypes: string[]
   style?: any
   url: string
-  onSocialButtonClicked:(str: string)=> any
+  onSocialButtonClicked?:(str: string)=> any
 }
  
  

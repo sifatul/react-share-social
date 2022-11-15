@@ -47,6 +47,10 @@ const style = {
   copyContainer: {
     border: '1px solid blue',
     background: 'rgb(0,0,0,0.7)'
+  },
+  title: {
+    color: 'aquamarine',
+    fontStyle: 'italic'
   }
 };
 function App() {
@@ -88,9 +92,9 @@ function App() {
           socialTypes={['facebook', 'twitter', 'line', 'linkedin', 'whatsapp', 'viber', 'telegram']}
           url="http://sifatul.github.io/"
           title="Share and get amazing products"
-          onSocialButtonClicked={(buttonName: string) => {
-            alert(`${buttonName} clicked`)
-          }}
+          // onSocialButtonClicked={(buttonName: string) => {
+          //   alert(`${buttonName} clicked`)
+          // }}
           style={style}
         />
 

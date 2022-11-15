@@ -183,7 +183,7 @@ const components: any = {
 function ShareSocial(props: IndexPropsType) {
     const classes = useStyles();
     const [isCopied, setIsCopied] = useState(false);
-    const { title, socialTypes = ['facebook', 'twitter'], style, url, onSocialButtonClicked } = props;
+    const { title, socialTypes = ['facebook', 'twitter'], style, url, onSocialButtonClicked = () => { } } = props;
     const copyToClipboard = (text: string) => {
         if (navigator && navigator.clipboard) navigator.clipboard.writeText(text)
             .then(() => { setIsCopied(true) })
@@ -210,7 +210,7 @@ function ShareSocial(props: IndexPropsType) {
 
     return (
         <div className={classes.container} style={style?.root}>
-            {title && <h1 className={classes.title}> {title} </h1>}
+            {title && <h1 className={classes.title} style={style?.title}> {title} </h1>}
             <div className={classes.iconContainer}>
                 {Array.isArray(socialTypes) && socialTypes.map((type, idx) => (
                     <React.Fragment key={"social_item_" + idx}>
