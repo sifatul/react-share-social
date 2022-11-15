@@ -4,11 +4,6 @@ import React, { useState } from 'react';
 import { FacebookIcon, FacebookShareButton, HatenaIcon, HatenaShareButton, InstapaperIcon, InstapaperShareButton, LineIcon, LineShareButton, LinkedinIcon, LinkedinShareButton, LivejournalIcon, LivejournalShareButton, MailruIcon, MailruShareButton, OKIcon, OKShareButton, PinterestIcon, PinterestShareButton, RedditIcon, RedditShareButton, TwitterIcon, TwitterShareButton, WhatsappIcon, WhatsappShareButton, EmailIcon, EmailShareButton, ViberShareButton, ViberIcon, TelegramShareButton, TelegramIcon, WorkplaceShareButton, WorkplaceIcon } from "react-share";
 import { IndexPropsType } from '../types';
 
-
-
-
-
-
 const useStyles = makeStyles({
     container: {
         position: 'relative',
