@@ -1,2 +1,2 @@
 import ShareSocial from "./ShareSocial"
-export {ShareSocial};
+export { ShareSocial };

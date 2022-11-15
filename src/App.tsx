@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 
-import SocialShare from './components/ShareSocial'
+import { ShareSocial } from './components/index'
 
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
@@ -69,7 +69,7 @@ function App() {
       </h1>
 
 
-        <SocialShare
+        <ShareSocial
           socialTypes={['facebook', 'twitter', 'line', 'linkedin', 'whatsapp', 'viber', 'telegram', 'reddit', 'instapaper', 'livejournal', 'mailru', 'ok', 'hatena',
             'email', 'workspace']}
           url="http://sifatul.github.io/"
@@ -89,7 +89,7 @@ function App() {
         <h1 className={classes.AppSubHeader}>
           Custom styles applicable to the all parts of the UI
       </h1>
-        <SocialShare
+        <ShareSocial
           socialTypes={['facebook', 'twitter', 'line', 'linkedin', 'whatsapp', 'viber', 'telegram']}
           url="http://sifatul.github.io/"
           title="Share and get amazing products"
