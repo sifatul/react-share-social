@@ -40,19 +40,6 @@
   },
   "main": "./dist/index.js",
   "module": "dist/index.js",
-  "babel": {
-    "presets": [
-      "@babel/react"
-    ],
-    "plugins": [
-      [
-        "@babel/plugin-proposal-class-properties",
-        {
-          "loose": true
-        }
-      ]
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -66,12 +53,9 @@
     ]
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.6.0",
-    "babel-core": "^7.0.0-bridge.0",
     "css-loader": "^5.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
