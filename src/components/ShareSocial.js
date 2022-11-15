@@ -26,6 +26,7 @@ const useStyles = makeStyles({
         height: 'auto',
         padding: '30px',
         outline: 'none',
+        minWidth: '250px'
     },
     title: {
         textAlign: 'left',
