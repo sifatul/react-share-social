@@ -1,18 +1,11 @@
-import React, { useState } from 'react';
-import FacebookShare from "./ShareButtons/FacebookShare";
-import TwitterShare from "./ShareButtons/TwitterShare";
-import RedditShare from "./ShareButtons/RedditShare";
-// import KakaoShare from "./ShareButtons/KakaoShare";
-import HatenaShare from "./ShareButtons/HatenaShare";
-import InstapaperShare from "./ShareButtons/InstapaperShare";
-import LineShare from "./ShareButtons/LineShareButton";
-import LinkedinShare from "./ShareButtons/LinkedinShareButton";
-import LivejournalShare from "./ShareButtons/LivejournalShareButton";
-import MailruShare from "./ShareButtons/MailruShareButton";
-import OKShare from "./ShareButtons/OKShareButton";
-import WhatsApp from "./ShareButtons/WhatsappShare";
-import PinterestShare from "./ShareButtons/PinterestShareButton";
+import { Tooltip } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import React, { useState } from 'react';
+import { FacebookIcon, FacebookShareButton, HatenaIcon, HatenaShareButton, InstapaperIcon, InstapaperShareButton, LineIcon, LineShareButton, LinkedinIcon, LinkedinShareButton, LivejournalIcon, LivejournalShareButton, MailruIcon, MailruShareButton, OKIcon, OKShareButton, PinterestIcon, PinterestShareButton, RedditIcon, RedditShareButton, TwitterIcon, TwitterShareButton, WhatsappIcon, WhatsappShareButton, EmailIcon, EmailShareButton, ViberShareButton, ViberIcon, TelegramShareButton, TelegramIcon, WorkplaceShareButton, WorkplaceIcon } from "react-share";
+import { IndexPropsType } from '../types';
+
+
+
 
 
 
@@ -125,44 +118,103 @@ const useStyles = makeStyles({
     }
 });
 
-const components = {
-    facebook: FacebookShare,
-    twitter: TwitterShare,
-    reddit: RedditShare,
-    hatena: HatenaShare,
-    instapaper: InstapaperShare,
-    line: LineShare,
-    linkedin: LinkedinShare,
-    livejournal: LivejournalShare,
-    mailru: MailruShare,
-    ok: OKShare,
-    whatsapp: WhatsApp,
-    pinterest: PinterestShare,
+const components: any = {
+    facebook: {
+        Button: FacebookShareButton,
+        Icon: FacebookIcon
+    },
+    twitter: {
+        Button: TwitterShareButton,
+        Icon: TwitterIcon
+    },
+    reddit: {
+        Button: RedditShareButton,
+        Icon: RedditIcon
+    },
+    hatena: {
+        Button: HatenaShareButton,
+        Icon: HatenaIcon
+    },
+    instapaper: {
+        Button: InstapaperShareButton,
+        Icon: InstapaperIcon
+    },
+    line: {
+        Button: LineShareButton,
+        Icon: LineIcon
+    },
+    linkedin: {
+        Button: LinkedinShareButton,
+        Icon: LinkedinIcon
+
+    },
+    livejournal: {
+        Button: LivejournalShareButton,
+        Icon: LivejournalIcon
+    },
+    mailru: {
+        Button: MailruShareButton,
+        Icon: MailruIcon
+    },
+    ok: { Button: OKShareButton, Icon: OKIcon },
+    whatsapp: {
+        Button: WhatsappShareButton,
+        Icon: WhatsappIcon
+    },
+    pinterest: {
+        Button: PinterestShareButton,
+        Icon: PinterestIcon
+    },
+    email: {
+        Button: EmailShareButton,
+        Icon: EmailIcon
+    },
+    viber: {
+        Button: ViberShareButton,
+        Icon: ViberIcon
+    },
+    telegram: {
+        Button: TelegramShareButton,
+        Icon: TelegramIcon
+    },
+    workspace: {
+        Button: WorkplaceShareButton,
+        Icon: WorkplaceIcon
+    }
 
 };
 
 
-function ShareSocial(props) {
+function ShareSocial(props: IndexPropsType) {
     const classes = useStyles();
     const [isCopied, setIsCopied] = useState(false);
-    const { title, socialTypes = ['facebook', 'twitter'], style } = props;
-    const copyToClipboard = (text) => {
+    const { title, socialTypes = ['facebook', 'twitter'], style, url, onSocialButtonClicked } = props;
+    const copyToClipboard = (text: string) => {
         if (navigator && navigator.clipboard) navigator.clipboard.writeText(text)
             .then(() => { setIsCopied(true) })
             .catch((error) => { alert(`Copy failed! ${error}`) });
     }
-    function getComponent(type) {
-        // Wrong! JSX type can't be an expression.
-        // Correct! JSX type can be a capitalized variable.
-        const SpecificMedia = components[type];
-        return <SpecificMedia {...props} socialType={type} />;
+    function getComponent(type: string) {
+        const { Button, Icon } = components[type];
+        return <Tooltip title="" placement="top">
+            <Button
+                url={url}
+                quote={title}
+                onClick={() => onSocialButtonClicked(type)}
+            >
+                <Icon
+                    size={40}
+                    round
+                />
+            </Button>
+        </Tooltip>
     }
 
 
 
 
     return (
-        <div className={classes.container} style={style}>
+        <div className={classes.container} style={style?.root}>
             {title && <h1 className={classes.title}> {title} </h1>}
             <div className={classes.iconContainer}>
                 {Array.isArray(socialTypes) && socialTypes.map((type, idx) => (
@@ -173,14 +225,14 @@ function ShareSocial(props) {
 
             </div>
 
-            {<div className={classes.copyContainer}>
+            <div className={classes.copyContainer} style={style?.copyContainer}>
                 <div className={classes.copyUrl}>
-                    {props.url}
+                    {url}
                 </div>
                 <div className={classes.copyIcon}
-                    onClick={() => copyToClipboard(props.url)}
+                    onClick={() => copyToClipboard(url)}
                 ><p> {isCopied ? 'Copied' : 'Copy'} </p></div>
-            </div>}
+            </div>
         </div>
 
     );
