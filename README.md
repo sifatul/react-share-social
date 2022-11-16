@@ -14,7 +14,8 @@ share UI support for:
   - Facebook
   - WhatsApp
   - Twitter 
-  - LinkedIn 
+  - LinkedIn
+  - Telegram 
   - Reddit 
   - Line 
   - Instapaper
