@@ -249,8 +249,7 @@ function ShareSocial(props: IndexPropsType) {
     <div className={classes.container} style={style?.root} data-testid="root">
       {title && (
         <h1 className={classes.title} style={style?.title} data-testid="title">
-          {" "}
-          {title}{" "}
+          {title}
         </h1>
       )}
       <div className={classes.iconContainer} style={style?.iconContainer}>
