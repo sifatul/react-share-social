@@ -3,7 +3,7 @@
 {
   "compilerOptions": {
     "jsx": "react-jsx",
-    "target": "es5",
+    "target": "es2015",
     "module": "commonjs",
     "resolveJsonModule": true,
     "outDir": "dist",
@@ -11,7 +11,8 @@
     "noImplicitAny": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
   },
   "include": ["src/**/*","index.*"]
 }

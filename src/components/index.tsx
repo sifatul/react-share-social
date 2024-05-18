@@ -1,3 +1,3 @@
-import ShareSocial from "./ShareSocial"
-import ReactShareSocial from "./ShareSocial"
+import {ShareSocial} from "./ShareSocial"
+import {ShareSocial as ReactShareSocial} from "./ShareSocial"
 export { ShareSocial, ReactShareSocial };

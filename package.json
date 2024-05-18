@@ -2,7 +2,7 @@
   "name": "react-share-social",
   "homepage": "http://sifatul.github.io/react-share-social",
   "description": "UI component to share contents in Social media. Share contents in facebook, twitter, pinterest, whatsapp etc.",
-  "version": "0.1.57",
+  "version": "0.1.59",
   "keywords": [
     "react",
     "component",
@@ -30,6 +30,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "build-tsc": "tsc",
     "publish:npm": "export NODE_ENV=production && BABEL_ENV=production && rm -rf dist && mkdir dist &&  babel src/components -d dist --copy-files",
     "publish:window": "cross-env NODE_ENV=production && npx rimraf dist && mkdir dist &&  babel src/components -d dist --copy-files"
   },
@@ -39,8 +40,9 @@
       "react-app/jest"
     ]
   },
-  "main": "./dist/components/index.js",
-  "module": "./dist/components/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "./dist/index.js",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -57,9 +59,11 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.6.0",
-    "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "^5.0.1",
     "web-vitals": "^0.2.4"
+  },
+  "peerDependencies":{
+    "react": "^17.0.1"
   }
 }
