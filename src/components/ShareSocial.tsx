@@ -282,4 +282,4 @@ function ShareSocial(props: IndexPropsType) {
   );
 }
 
-export default ShareSocial;
+export {ShareSocial};
