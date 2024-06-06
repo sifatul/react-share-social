@@ -4,7 +4,7 @@ import './App.css';
 import { ShareSocial } from './components/index'
 
 import React from "react";
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 const useStyles = makeStyles({
   App: {
     backgroundColor: '#282c34',
